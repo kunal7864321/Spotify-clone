@@ -315,3 +315,53 @@
   color: #727272;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 260px;
+    padding: 40px 16px 32px;
+  }
+
+  .heroDecor {
+    display: none;
+  }
+
+  .section {
+    padding: 24px 16px 0;
+  }
+
+  .playlistGrid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .recentRow {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+  }
+
+  .releasesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 26px;
+  }
+
+  .heroBtnPrimary,
+  .heroBtnSecondary {
+    padding: 11px 20px;
+    font-size: 13px;
+  }
+
+  .playlistGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .releasesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
