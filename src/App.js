@@ -7,10 +7,12 @@ import Library from "./pages/Library";
 import LikedSongs from "./pages/LikedSongs";
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <div className="app">
+      <ScrollToTop />
       <Sidebar />
       <div className="main-content">
         <Navbar />
