@@ -7,6 +7,13 @@ import styles from "./Home.module.css";
 
 const NEW_RELEASES = ALBUMS.slice(0, 6);
 
+const getGreeting = () => {
+  const hour = new Date().getHours();
+  if (hour < 12) return "Good Morning ☀️";
+  if (hour < 18) return "Good Afternoon 🌤️";
+  return "Good Evening 🌙";
+};
+
 const GENRES = [
   { label: "Bollywood", color: "#e13300", emoji: "🎬" },
   { label: "Romantic", color: "#c11574", emoji: "💝" },
@@ -22,6 +29,7 @@ export default function Home() {
 
   useEffect(() => {
     document.title = "Spotify – Home";
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
   const handlePlayAll = () => {
@@ -33,7 +41,7 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroBg} />
         <div className={styles.heroContent}>
-          <p className={styles.heroEyebrow}>Good Evening 👋</p>
+          <p className={styles.heroEyebrow}>{getGreeting()}</p>
           <h1 className={styles.heroTitle}>Your Music, Your World</h1>
           <p className={styles.heroSub}>
             Discover hand-picked playlists, top artists, and fresh releases —
