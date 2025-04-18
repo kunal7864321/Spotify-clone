@@ -12,6 +12,7 @@ export default function PlaylistDetail() {
 
   const playlist = PLAYLISTS.find((pl) => pl.id === id);
   const songs = playlist ? playlist.songs.map(getSongById).filter(Boolean) : [];
+  const [shuffleOn, setShuffleOn] = useState(false);
 
   useEffect(() => {
     document.title = playlist ? `${playlist.name} – Spotify` : "Spotify";
@@ -69,6 +70,16 @@ export default function PlaylistDetail() {
           aria-label="Play all songs"
         >
           ▶ Play All
+        </button>
+        <button
+          id="playlist-shuffle-btn"
+          className={`${styles.shuffleBtn} ${shuffleOn ? styles.shuffleBtnOn : ""}`}
+          onClick={() => setShuffleOn((prev) => !prev)}
+          aria-pressed={shuffleOn}
+          aria-label="Toggle shuffle"
+          title="Shuffle"
+        >
+          ⇄ Shuffle
         </button>
       </div>
 

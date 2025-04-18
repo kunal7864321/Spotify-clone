@@ -96,6 +96,34 @@
   transform: scale(1.04);
 }
 
+.shuffleBtn {
+  background: transparent;
+  color: #b3b3b3;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 500px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.shuffleBtn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.shuffleBtnOn {
+  color: #1db954;
+  border-color: #1db954;
+}
+
+.shuffleBtnOn:hover {
+  color: #1ed760;
+  border-color: #1ed760;
+}
+
 .songListHeader {
   display: grid;
   grid-template-columns: 40px 1fr 200px 100px 40px;
