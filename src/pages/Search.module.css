@@ -40,6 +40,14 @@
   transform: scale(1.03);
 }
 
+.categoryEmoji {
+  display: block;
+  font-size: 36px;
+  margin-bottom: 8px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
 .categoryLabel {
   font-size: 16px;
   font-weight: 800;

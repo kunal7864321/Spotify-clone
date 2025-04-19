@@ -9,18 +9,18 @@ import ArtistCard from "../Components/ArtistCard";
 import styles from "./Search.module.css";
 
 const CATEGORIES = [
-  { id: "cat1", label: "Bollywood", color: "#e13300" },
-  { id: "cat2", label: "Romantic", color: "#c11574" },
-  { id: "cat3", label: "Pop", color: "#1e3264" },
-  { id: "cat4", label: "Hip-Hop", color: "#8d67ab" },
-  { id: "cat5", label: "Classical", color: "#477d95" },
-  { id: "cat6", label: "Party", color: "#ba5d07" },
-  { id: "cat7", label: "Indie", color: "#27856a" },
-  { id: "cat8", label: "Devotional", color: "#e8a816" },
-  { id: "cat9", label: "Punjabi", color: "#dc148c" },
-  { id: "cat10", label: "Ghazals", color: "#5179a1" },
-  { id: "cat11", label: "Folk", color: "#148a08" },
-  { id: "cat12", label: "Sufi", color: "#503750" },
+  { id: "cat1", label: "Bollywood", color: "#e13300", emoji: "🎬" },
+  { id: "cat2", label: "Romantic", color: "#c11574", emoji: "💝" },
+  { id: "cat3", label: "Pop", color: "#1e3264", emoji: "🎵" },
+  { id: "cat4", label: "Hip-Hop", color: "#8d67ab", emoji: "🎤" },
+  { id: "cat5", label: "Classical", color: "#477d95", emoji: "🎻" },
+  { id: "cat6", label: "Party", color: "#ba5d07", emoji: "🎉" },
+  { id: "cat7", label: "Indie", color: "#27856a", emoji: "🎸" },
+  { id: "cat8", label: "Devotional", color: "#e8a816", emoji: "🙏" },
+  { id: "cat9", label: "Punjabi", color: "#dc148c", emoji: "🥁" },
+  { id: "cat10", label: "Ghazals", color: "#5179a1", emoji: "🎙️" },
+  { id: "cat11", label: "Folk", color: "#148a08", emoji: "🪕" },
+  { id: "cat12", label: "Sufi", color: "#503750", emoji: "🌙" },
 ];
 
 const TABS = ["Songs", "Artists", "Albums"];
@@ -79,6 +79,7 @@ export default function Search() {
                 aria-label={`Browse ${cat.label}`}
                 onKeyDown={(e) => e.key === "Enter" && null}
               >
+                <span className={styles.categoryEmoji}>{cat.emoji}</span>
                 <span className={styles.categoryLabel}>{cat.label}</span>
               </div>
             ))}
