@@ -52,6 +52,9 @@ export default function ArtistDetail() {
           <p className={styles.heroListeners}>
             {artist.monthlyListeners} monthly listeners
           </p>
+          <p className={styles.heroTrackCount}>
+            {topTracks.length} {topTracks.length === 1 ? "track" : "tracks"} available
+          </p>
           <div className={styles.heroGenres}>
             {artist.genres.map((g) => (
               <span key={g} className={styles.genreTag}>

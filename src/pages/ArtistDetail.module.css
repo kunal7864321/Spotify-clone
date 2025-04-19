@@ -50,7 +50,14 @@
 .heroListeners {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 6px;
+}
+
+.heroTrackCount {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
   margin: 0 0 14px;
+  font-style: italic;
 }
 
 .heroGenres {
