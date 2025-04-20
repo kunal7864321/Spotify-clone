@@ -202,6 +202,50 @@ svg {
   padding: var(--navbar-height) 0 0;
 }
 
+.song-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 200px 80px 40px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+  cursor: pointer;
+  color: var(--color-text-subdued);
+  font-size: var(--font-size-sm);
+}
+
+.song-row:hover {
+  background: var(--color-bg-highlight);
+  color: var(--color-text-base);
+}
+
+.song-row p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-row p:first-child {
+  color: var(--color-text-base);
+  font-weight: var(--font-weight-medium);
+}
+
+.song-row button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.song-row:hover button {
+  opacity: 1;
+}
+
+
 .text-xs     { font-size: var(--font-size-xs); }
 .text-sm     { font-size: var(--font-size-sm); }
 .text-base   { font-size: var(--font-size-base); }
