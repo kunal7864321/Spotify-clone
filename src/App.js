@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import PlayerBar from "./components/PlayerBar";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/artist/:id" element={<div>Artist</div>} />
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
+      <PlayerBar />
     </div>
   );
 }
