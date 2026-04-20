@@ -1,7 +1,3 @@
-/* ============================================================
-   Navbar.css — Sticky top navigation bar
-   ============================================================ */
-
 .navbar {
     position: fixed;
     top: 0;
@@ -19,12 +15,10 @@
     transition: left var(--transition-slow), background var(--transition-slow);
 }
 
-/* Adjust left offset when sidebar is collapsed */
 .app.sidebar-collapsed .navbar {
     left: var(--sidebar-width-collapsed);
 }
 
-/* ---------- Back / Forward buttons ---------- */
 .navbar__nav-controls {
     display: flex;
     align-items: center;
@@ -55,7 +49,6 @@
     transform: scale(0.95);
 }
 
-/* ---------- Page Title ---------- */
 .navbar__title {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
@@ -64,11 +57,10 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    /* h1 semantics, keep visual subtle */
+
     line-height: 1;
 }
 
-/* ---------- Right Actions ---------- */
 .navbar__actions {
     display: flex;
     align-items: center;
@@ -76,7 +68,6 @@
     flex-shrink: 0;
 }
 
-/* Text + icon button (Install App) */
 .navbar__action-btn {
     display: flex;
     align-items: center;
@@ -97,7 +88,6 @@
     background-color: var(--color-bg-highlight);
 }
 
-/* Icon-only button (bell) */
 .navbar__action-icon-btn {
     display: flex;
     align-items: center;
@@ -117,7 +107,6 @@
     background-color: var(--color-bg-highlight);
 }
 
-/* ---------- Avatar / Profile Button ---------- */
 .navbar__avatar {
     display: flex;
     align-items: center;
@@ -136,7 +125,6 @@
     transform: scale(1.03);
 }
 
-/* Avatar icon circle */
 .navbar__avatar>svg {
     width: 28px;
     height: 28px;
@@ -152,7 +140,6 @@
     color: var(--color-text-base);
 }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
     .navbar {
         left: 0;

@@ -1,7 +1,3 @@
-/* ============================================================
-   PlaylistCard.css — Card with hover play overlay
-   ============================================================ */
-
 .playlist-card {
     background-color: var(--color-bg-elevated);
     border-radius: var(--radius-lg);
@@ -20,7 +16,6 @@
     transform: translateY(-2px);
 }
 
-/* ---------- Cover art ---------- */
 .playlist-card__cover {
     position: relative;
     width: 100%;
@@ -42,7 +37,6 @@
     filter: brightness(0.7);
 }
 
-/* Fallback when no image */
 .playlist-card__image-fallback {
     width: 100%;
     height: 100%;
@@ -52,7 +46,6 @@
     justify-content: center;
 }
 
-/* ---------- Overlay with play button ---------- */
 .playlist-card__overlay {
     position: absolute;
     inset: 0;
@@ -60,10 +53,9 @@
     align-items: flex-end;
     justify-content: flex-end;
     padding: var(--space-3);
-    /* overlay appears on hover */
+
 }
 
-/* Play button — hidden by default, slides up on hover */
 .playlist-card__play-btn {
     width: 48px;
     height: 48px;
@@ -76,7 +68,7 @@
     cursor: pointer;
     border: none;
     box-shadow: var(--shadow-lg);
-    /* start invisible and shifted down */
+
     opacity: 0;
     transform: translateY(8px);
     transition: opacity var(--transition-base), transform var(--transition-base), background-color var(--transition-fast);
@@ -96,7 +88,6 @@
     transform: scale(0.96) translateY(0) !important;
 }
 
-/* ---------- Text ---------- */
 .playlist-card__info {
     display: flex;
     flex-direction: column;

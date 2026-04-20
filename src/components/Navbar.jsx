@@ -4,7 +4,6 @@ import { PlayerContext } from '../context/PlayerContext';
 import { AppContext } from '../context/AppContext';
 import './Navbar.css';
 
-// ---------- SVG Icons ----------
 const BackIcon = () => (
     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
@@ -35,12 +34,11 @@ const BellIcon = () => (
     </svg>
 );
 
-// ---------- Navbar Component ----------
 export default function Navbar() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Determine a nice page title from the current path
+
     const getPageTitle = useCallback(() => {
         const path = location.pathname;
         if (path === '/') return 'Good Evening 👋';
@@ -52,7 +50,7 @@ export default function Navbar() {
         return '';
     }, [location.pathname]);
 
-    // Determine background gradient tint based on route
+
     const getBgColor = useCallback(() => {
         const path = location.pathname;
         if (path === '/') return 'rgba(29,185,84,0.15)';
@@ -63,7 +61,7 @@ export default function Navbar() {
 
     return (
         <header className="navbar" style={{ '--navbar-tint': getBgColor() }}>
-            {/* ---- Back / Forward navigation ---- */}
+            {}
             <div className="navbar__nav-controls">
                 <button
                     className="navbar__nav-btn"
@@ -83,23 +81,23 @@ export default function Navbar() {
                 </button>
             </div>
 
-            {/* ---- Page title (center-left) ---- */}
+            {}
             <h1 className="navbar__title">{getPageTitle()}</h1>
 
-            {/* ---- Right actions ---- */}
+            {}
             <div className="navbar__actions">
-                {/* Install app hint */}
+                {}
                 <button className="navbar__action-btn navbar__action-btn--text" title="Install app">
                     <DownloadIcon />
                     <span>Install App</span>
                 </button>
 
-                {/* Notification bell */}
+                {}
                 <button className="navbar__action-icon-btn" aria-label="Notifications" title="Notifications">
                     <BellIcon />
                 </button>
 
-                {/* User avatar / profile */}
+                {}
                 <button className="navbar__avatar" aria-label="User profile" title="Profile">
                     <UserIcon />
                     <span className="navbar__avatar-label">Ishita</span>

@@ -6,7 +6,6 @@ import { PLAYLISTS, SONGS } from '../data/data';
 import PlaylistCard from '../components/PlaylistCard';
 import './Library.css';
 
-// ---------- Icons ----------
 const PlusIcon = () => (
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5">
         <line x1="12" y1="5" x2="12" y2="19" />
@@ -40,14 +39,13 @@ const HeartFilledIcon = () => (
     </svg>
 );
 
-// ---------- Library Page ----------
 export default function Library() {
     const { userPlaylists, createPlaylist } = useContext(AppContext);
 
-    // Combine static playlists with user-created ones
+
     const allPlaylists = [...PLAYLISTS, ...userPlaylists];
 
-    // Create a new playlist
+
     const handleCreatePlaylist = () => {
         const name = `My Playlist #${userPlaylists.length + 1}`;
         createPlaylist(name);
@@ -55,7 +53,7 @@ export default function Library() {
 
     return (
         <div className="library-page">
-            {/* ---- Header ---- */}
+            {}
             <div className="library-page__header">
                 <div className="library-page__header-left">
                     <h2 className="library-page__heading">Your Library</h2>
@@ -65,7 +63,7 @@ export default function Library() {
                 </div>
 
                 <div className="library-page__header-right">
-                    {/* Create playlist */}
+                    {}
                     <button
                         className="library-page__create-btn"
                         onClick={handleCreatePlaylist}
@@ -78,7 +76,7 @@ export default function Library() {
                 </div>
             </div>
 
-            {/* ---- Liked Songs pinned shortcut ---- */}
+            {}
             <section className="library-page__liked-shortcut" aria-label="Liked Songs">
                 <div className="library-page__liked-cover">
                     <HeartFilledIcon />
@@ -96,7 +94,7 @@ export default function Library() {
                 </a>
             </section>
 
-            {/* ---- Playlists Grid ---- */}
+            {}
             {allPlaylists.length > 0 ? (
                 <section className="library-page__section">
                     <h3 className="library-page__section-title">Playlists</h3>
@@ -107,7 +105,7 @@ export default function Library() {
                     </div>
                 </section>
             ) : (
-                /* Empty state */
+
                 <div className="empty-state">
                     <span className="empty-state__icon">🎵</span>
                     <p className="empty-state__title">Create your first playlist</p>

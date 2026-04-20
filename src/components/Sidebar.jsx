@@ -3,7 +3,6 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import './Sidebar.css';
 
-// ---------- SVG Icons (inline, no external dep) ----------
 const HomeIcon = ({ filled }) => (
     <svg viewBox="0 0 24 24" width="24" height="24" fill={filled ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2">
         <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" />
@@ -53,24 +52,23 @@ const MusicNoteIcon = () => (
     </svg>
 );
 
-// ---------- Sidebar Component ----------
 export default function Sidebar() {
     const { sidebarCollapsed, setSidebarCollapsed, userPlaylists, createPlaylist } = useContext(AppContext);
     const navigate = useNavigate();
 
-    // Handle create playlist click
+
     const handleCreatePlaylist = () => {
         const name = `My Playlist #${userPlaylists.length + 1}`;
         createPlaylist(name);
     };
 
-    // NavLink active class helper
+
     const navLinkClass = ({ isActive }) =>
         `sidebar__nav-link${isActive ? ' sidebar__nav-link--active' : ''}`;
 
     return (
         <aside className={`sidebar${sidebarCollapsed ? ' sidebar--collapsed' : ''}`}>
-            {/* ---- Logo ---- */}
+            {}
             <div className="sidebar__logo" onClick={() => navigate('/')}>
                 <svg viewBox="0 0 24 24" width="32" height="32" fill="#1db954">
                     <circle cx="12" cy="12" r="12" fill="#1db954" />
@@ -81,7 +79,7 @@ export default function Sidebar() {
                 {!sidebarCollapsed && <span className="sidebar__logo-text">Spotify</span>}
             </div>
 
-            {/* ---- Primary Navigation ---- */}
+            {}
             <nav className="sidebar__nav">
                 <NavLink to="/" end className={navLinkClass}>
                     <span className="sidebar__nav-icon"><HomeIcon /></span>
@@ -94,9 +92,9 @@ export default function Sidebar() {
                 </NavLink>
             </nav>
 
-            {/* ---- Library Section ---- */}
+            {}
             <div className="sidebar__library">
-                {/* Library header */}
+                {}
                 <div className="sidebar__library-header">
                     <NavLink to="/library" className={navLinkClass}>
                         <span className="sidebar__nav-icon"><LibraryIcon /></span>
@@ -115,7 +113,7 @@ export default function Sidebar() {
                     )}
                 </div>
 
-                {/* Liked Songs shortcut */}
+                {}
                 {!sidebarCollapsed && (
                     <NavLink to="/liked" className="sidebar__liked">
                         <span className="sidebar__liked-icon">
@@ -128,10 +126,10 @@ export default function Sidebar() {
                     </NavLink>
                 )}
 
-                {/* Divider */}
+                {}
                 {!sidebarCollapsed && <div className="sidebar__divider" />}
 
-                {/* User playlist list */}
+                {}
                 {!sidebarCollapsed && (
                     <ul className="sidebar__playlist-list">
                         {userPlaylists.map(pl => (
@@ -151,7 +149,7 @@ export default function Sidebar() {
                 )}
             </div>
 
-            {/* ---- Collapse Toggle ---- */}
+            {}
             <button
                 className="sidebar__collapse-btn"
                 onClick={() => setSidebarCollapsed(prev => !prev)}

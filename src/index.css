@@ -1,19 +1,12 @@
-/* ============================================================
-   SPOTIFY CLONE — Global CSS
-   Dev 2: UI Components & Styling Lead
-   ============================================================ */
-
-/* ---------- Google Font Import ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Circular+Std:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* ---------- CSS Custom Properties (Design Tokens) ---------- */
 :root {
-  /* Brand Colors */
+
   --color-green:        #1db954;
   --color-green-light:  #1ed760;
   --color-green-dark:   #158a3e;
 
-  /* Background Scale */
+
   --color-bg-base:      #121212;
   --color-bg-elevated:  #181818;
   --color-bg-highlight: #282828;
@@ -21,32 +14,32 @@
   --color-bg-sidebar:   #000000;
   --color-bg-navbar:    rgba(18, 18, 18, 0.85);
 
-  /* Surface / Card */
+
   --color-surface:      #1a1a1a;
   --color-surface-hover:#2a2a2a;
 
-  /* Text */
+
   --color-text-base:    #ffffff;
   --color-text-subdued: #b3b3b3;
   --color-text-muted:   #6a6a6a;
   --color-text-link:    #ffffff;
 
-  /* Accent / Status */
+
   --color-accent:       #1db954;
   --color-error:        #e91429;
   --color-warning:      #f59b23;
 
-  /* Sidebar */
+
   --sidebar-width:      240px;
   --sidebar-width-collapsed: 72px;
 
-  /* Navbar */
+
   --navbar-height:      64px;
 
-  /* Player bar */
+
   --player-height:      90px;
 
-  /* Spacing Scale */
+
   --space-1:  4px;
   --space-2:  8px;
   --space-3:  12px;
@@ -58,20 +51,20 @@
   --space-12: 48px;
   --space-16: 64px;
 
-  /* Border Radius */
+
   --radius-sm:   4px;
   --radius-md:   8px;
   --radius-lg:   12px;
   --radius-xl:   16px;
   --radius-full: 9999px;
 
-  /* Shadows */
+
   --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.5);
   --shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.6);
   --shadow-glow: 0 0 20px rgba(29, 185, 84, 0.25);
 
-  /* Typography */
+
   --font-family:       'Inter', 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-size-xs:      11px;
   --font-size-sm:      13px;
@@ -88,12 +81,12 @@
   --line-height-tight: 1.2;
   --line-height-normal:1.5;
 
-  /* Transitions */
+
   --transition-fast:   0.15s ease;
   --transition-base:   0.2s ease;
   --transition-slow:   0.3s ease;
 
-  /* Z-index Scale */
+
   --z-sidebar: 100;
   --z-navbar:  200;
   --z-player:  300;
@@ -101,7 +94,6 @@
   --z-tooltip: 500;
 }
 
-/* ---------- Reset & Base ---------- */
 *,
 *::before,
 *::after {
@@ -166,7 +158,6 @@ svg {
   flex-shrink: 0;
 }
 
-/* ---------- Scrollbar ---------- */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -182,7 +173,6 @@ svg {
   background: var(--color-text-muted);
 }
 
-/* ---------- App Layout Shell ---------- */
 .app {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
@@ -197,7 +187,6 @@ svg {
   grid-template-columns: var(--sidebar-width-collapsed) 1fr;
 }
 
-/* Main content area (right of sidebar, above player) */
 .main-content {
   grid-column: 2;
   grid-row: 1;
@@ -213,7 +202,6 @@ svg {
   padding: var(--navbar-height) 0 0;
 }
 
-/* ---------- Typography Utilities ---------- */
 .text-xs     { font-size: var(--font-size-xs); }
 .text-sm     { font-size: var(--font-size-sm); }
 .text-base   { font-size: var(--font-size-base); }
@@ -230,7 +218,6 @@ svg {
 .font-semibold{ font-weight: var(--font-weight-semibold); }
 .font-bold    { font-weight: var(--font-weight-bold); }
 
-/* ---------- Layout Utilities ---------- */
 .flex        { display: flex; }
 .flex-col    { flex-direction: column; }
 .items-center{ align-items: center; }
@@ -241,7 +228,6 @@ svg {
 .gap-4  { gap: var(--space-4); }
 .gap-6  { gap: var(--space-6); }
 
-/* ---------- Button Utilities ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -284,7 +270,6 @@ svg {
   color: var(--color-text-base);
 }
 
-/* ---------- Icon Button ---------- */
 .icon-btn {
   display: flex;
   align-items: center;
@@ -304,7 +289,6 @@ svg {
   background: var(--color-bg-highlight);
 }
 
-/* ---------- Card Utilities ---------- */
 .card {
   background-color: var(--color-bg-elevated);
   border-radius: var(--radius-lg);
@@ -316,7 +300,6 @@ svg {
   background-color: var(--color-bg-highlight);
 }
 
-/* ---------- Section Utilities ---------- */
 .section-title {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
@@ -335,21 +318,18 @@ svg {
   text-decoration: underline;
 }
 
-/* ---------- Grid Utilities ---------- */
 .grid-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: var(--space-4);
 }
 
-/* ---------- Divider ---------- */
 .divider {
   height: 1px;
   background-color: var(--color-bg-highlight);
   margin: var(--space-4) 0;
 }
 
-/* ---------- Overlay Utilities ---------- */
 .overlay {
   position: absolute;
   inset: 0;
@@ -359,7 +339,6 @@ svg {
   transition: opacity var(--transition-base);
 }
 
-/* ---------- Empty State ---------- */
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -385,7 +364,6 @@ svg {
   max-width: 300px;
 }
 
-/* ---------- Badge ---------- */
 .badge {
   display: inline-block;
   padding: 2px var(--space-2);
@@ -396,7 +374,6 @@ svg {
   color: #000;
 }
 
-/* ---------- Animations ---------- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -420,19 +397,16 @@ svg {
 .animate-slideInLeft{ animation: slideInLeft 0.25s ease forwards; }
 .animate-pulse      { animation: pulse 2s infinite; }
 
-/* ---------- Focus Visible ---------- */
 *:focus-visible {
   outline: 2px solid var(--color-green);
   outline-offset: 2px;
 }
 
-/* ---------- Selection ---------- */
 ::selection {
   background-color: var(--color-green);
   color: #000;
 }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   :root {
     --sidebar-width: 0px;

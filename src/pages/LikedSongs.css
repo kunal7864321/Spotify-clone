@@ -1,12 +1,7 @@
-/* ============================================================
-   LikedSongs.css — Liked Songs playlist page
-   ============================================================ */
-
 .liked-page {
     animation: fadeIn 0.3s ease forwards;
 }
 
-/* ---------- Hero Section ---------- */
 .liked-page__hero {
     display: flex;
     align-items: flex-end;
@@ -55,7 +50,6 @@
     color: var(--color-text-subdued);
 }
 
-/* ---------- Action Bar ---------- */
 .liked-page__actions {
     display: flex;
     align-items: center;
@@ -63,7 +57,6 @@
     padding: var(--space-6) var(--space-8);
 }
 
-/* Green Play button */
 .liked-page__play-btn {
     width: 56px;
     height: 56px;
@@ -88,7 +81,6 @@
     transform: scale(0.96);
 }
 
-/* Shuffle button */
 .liked-page__shuffle-btn {
     display: flex;
     align-items: center;
@@ -105,12 +97,10 @@
     transform: scale(1.1);
 }
 
-/* ---------- Song Table ---------- */
 .liked-page__table-wrap {
     padding: 0 var(--space-8) var(--space-8);
 }
 
-/* Table header row */
 .liked-page__table-header {
     display: grid;
     grid-template-columns: 48px 1fr 1fr 100px;
@@ -142,14 +132,12 @@
     margin: var(--space-2) 0 var(--space-2);
 }
 
-/* ---------- Song List ---------- */
 .liked-page__list {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
 
-/* ---------- Song Row ---------- */
 .liked-page__row {
     display: grid;
     grid-template-columns: 48px 1fr 1fr 100px;
@@ -164,7 +152,6 @@
     background-color: var(--color-bg-elevated);
 }
 
-/* Active (currently playing) */
 .liked-page__row--active .liked-page__song-title {
     color: var(--color-green) !important;
 }
@@ -173,7 +160,6 @@
     color: var(--color-green);
 }
 
-/* --- Index cell --- */
 .liked-page__row-index {
     display: flex;
     align-items: center;
@@ -186,7 +172,6 @@
     font-variant-numeric: tabular-nums;
 }
 
-/* --- Title cell --- */
 .liked-page__row-title {
     display: flex;
     align-items: center;
@@ -194,7 +179,6 @@
     overflow: hidden;
 }
 
-/* Thumbnail */
 .liked-page__thumb {
     position: relative;
     width: 40px;
@@ -220,7 +204,6 @@
     justify-content: center;
 }
 
-/* Hover play overlay on thumb */
 .liked-page__thumb-overlay {
     position: absolute;
     inset: 0;
@@ -237,7 +220,6 @@
     opacity: 1;
 }
 
-/* Song name + artist */
 .liked-page__song-info {
     display: flex;
     flex-direction: column;
@@ -285,7 +267,6 @@
     text-decoration: underline;
 }
 
-/* --- Album cell --- */
 .liked-page__row-album {
     overflow: hidden;
 }
@@ -310,7 +291,6 @@
     text-decoration: underline;
 }
 
-/* --- Duration cell --- */
 .liked-page__row-duration {
     display: flex;
     align-items: center;
@@ -318,7 +298,6 @@
     gap: var(--space-3);
 }
 
-/* Unlike btn — hidden by default, shows on row hover */
 .liked-page__unlike-btn {
     background: none;
     border: none;
@@ -345,7 +324,6 @@
     white-space: nowrap;
 }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
     .liked-page__hero {
         flex-direction: column;

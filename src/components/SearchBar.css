@@ -1,7 +1,3 @@
-/* ============================================================
-   SearchBar.css — Pill-shaped search input with clear button
-   ============================================================ */
-
 .search-bar {
     position: relative;
     display: flex;
@@ -10,7 +6,6 @@
     max-width: 364px;
 }
 
-/* ---------- Icon wrappers ---------- */
 .search-bar__icon {
     position: absolute;
     display: flex;
@@ -25,17 +20,15 @@
     left: var(--space-4);
 }
 
-/* Icon turns white on focus */
 .search-bar:focus-within .search-bar__icon--search {
     color: var(--color-text-base);
 }
 
-/* ---------- Input ---------- */
 .search-bar__input {
     width: 100%;
     height: 48px;
     padding: 0 var(--space-10) 0 48px;
-    /* left: icon gap; right: clear btn gap */
+
     border-radius: var(--radius-full);
     background-color: var(--color-bg-elevated);
     border: 1.5px solid transparent;
@@ -45,7 +38,7 @@
     font-family: inherit;
     outline: none;
     transition: background-color var(--transition-fast), border-color var(--transition-fast);
-    /* Remove browser search chrome */
+
     -webkit-appearance: none;
     appearance: none;
 }
@@ -55,30 +48,25 @@
     font-weight: var(--font-weight-normal);
 }
 
-/* Remove browser X button on search inputs */
 .search-bar__input::-webkit-search-cancel-button,
 .search-bar__input::-webkit-search-decoration {
     -webkit-appearance: none;
     display: none;
 }
 
-/* Focus state */
 .search-bar__input:focus {
     background-color: var(--color-bg-highlight);
     border-color: var(--color-text-base);
 }
 
-/* Has value — slightly brighter */
 .search-bar--has-value .search-bar__input {
     background-color: var(--color-bg-highlight);
 }
 
-/* Hover */
 .search-bar__input:hover:not(:focus) {
     background-color: var(--color-bg-highlight);
 }
 
-/* ---------- Clear button ---------- */
 .search-bar__clear-btn {
     position: absolute;
     right: var(--space-3);
@@ -94,7 +82,7 @@
     border: none;
     padding: 0;
     transition: all var(--transition-fast);
-    /* Animate in */
+
     animation: fadeIn 0.15s ease forwards;
 }
 

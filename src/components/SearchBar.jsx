@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import './SearchBar.css';
 
-// ---------- Icons ----------
 const SearchIcon = () => (
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
         <circle cx="11" cy="11" r="8" />
@@ -17,11 +16,6 @@ const ClearIcon = () => (
     </svg>
 );
 
-// ---------- SearchBar Component ----------
-// Props:
-//   placeholder: string — input placeholder text
-//   onSearch:    optional callback(query) triggered on every keystroke
-//   autoNavigate: if true, navigates to /search when user types (default true)
 export default function SearchBar({
     placeholder = 'What do you want to listen to?',
     onSearch,
@@ -31,16 +25,16 @@ export default function SearchBar({
     const navigate = useNavigate();
     const inputRef = useRef(null);
 
-    // Controlled change handler
+
     const handleChange = useCallback(
         (e) => {
             const val = e.target.value;
             setSearchQuery(val);
 
-            // Bubble up to parent if provided
+
             if (onSearch) onSearch(val);
 
-            // Navigate to search page the first time the user types
+
             if (autoNavigate && val.trim().length > 0) {
                 navigate('/search', { replace: true });
             }
@@ -48,14 +42,14 @@ export default function SearchBar({
         [setSearchQuery, onSearch, autoNavigate, navigate]
     );
 
-    // Clear the input
+
     const handleClear = useCallback(() => {
         setSearchQuery('');
         if (onSearch) onSearch('');
         inputRef.current?.focus();
     }, [setSearchQuery, onSearch]);
 
-    // Submit (Enter key)
+
     const handleKeyDown = useCallback(
         (e) => {
             if (e.key === 'Escape') {
@@ -67,12 +61,12 @@ export default function SearchBar({
 
     return (
         <div className={`search-bar${searchQuery ? ' search-bar--has-value' : ''}`}>
-            {/* Search icon */}
+            {}
             <span className="search-bar__icon search-bar__icon--search" aria-hidden="true">
                 <SearchIcon />
             </span>
 
-            {/* Controlled input */}
+            {}
             <input
                 ref={inputRef}
                 id="global-search-input"
@@ -87,7 +81,7 @@ export default function SearchBar({
                 spellCheck="false"
             />
 
-            {/* Clear button — only visible when text is entered */}
+            {}
             {searchQuery && (
                 <button
                     className="search-bar__clear-btn"

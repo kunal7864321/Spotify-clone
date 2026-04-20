@@ -4,7 +4,6 @@ import { PlayerContext } from '../context/PlayerContext';
 import { SONGS } from '../data/data';
 import './LikedSongs.css';
 
-// ---------- Icons ----------
 const HeartFilledIcon = ({ size = 20 }) => (
     <svg viewBox="0 0 24 24" width={size} height={size} fill="#1db954" stroke="#1db954" strokeWidth="1">
         <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
@@ -45,15 +44,14 @@ const MusicFallback = () => (
     </svg>
 );
 
-// ---------- LikedSongs Page ----------
 export default function LikedSongs() {
     const { likedSongs, toggleLike, playSong, isPlaying, currentSong } = useContext(PlayerContext);
     const navigate = useNavigate();
 
-    // Filter full SONGS data to only liked ones
+
     const likedSongsList = SONGS.filter(song => likedSongs.has(song.id));
 
-    // Play all liked songs (play first, rest could queue — Dev 3's job)
+
     const handlePlayAll = () => {
         if (likedSongsList.length > 0) {
             playSong(likedSongsList[0]);
@@ -62,14 +60,14 @@ export default function LikedSongs() {
 
     return (
         <div className="liked-page">
-            {/* ---- Gradient Hero ---- */}
+            {}
             <div className="liked-page__hero">
-                {/* Large heart icon */}
+                {}
                 <div className="liked-page__hero-cover">
                     <HeartFilledIcon size={80} />
                 </div>
 
-                {/* Info */}
+                {}
                 <div className="liked-page__hero-info">
                     <p className="liked-page__hero-label">Playlist</p>
                     <h2 className="liked-page__hero-title">Liked Songs</h2>
@@ -79,7 +77,7 @@ export default function LikedSongs() {
                 </div>
             </div>
 
-            {/* ---- Action Bar ---- */}
+            {}
             {likedSongsList.length > 0 && (
                 <div className="liked-page__actions">
                     <button
@@ -100,10 +98,10 @@ export default function LikedSongs() {
                 </div>
             )}
 
-            {/* ---- Song List ---- */}
+            {}
             {likedSongsList.length > 0 ? (
                 <div className="liked-page__table-wrap">
-                    {/* Table header */}
+                    {}
                     <div className="liked-page__table-header" role="row">
                         <span className="liked-page__th liked-page__th--index">#</span>
                         <span className="liked-page__th liked-page__th--title">Title</span>
@@ -115,7 +113,7 @@ export default function LikedSongs() {
 
                     <div className="liked-page__divider" />
 
-                    {/* Song rows */}
+                    {}
                     <ul className="liked-page__list" role="list">
                         {likedSongsList.map((song, index) => {
                             const isCurrentSong = currentSong?.id === song.id;
@@ -126,14 +124,14 @@ export default function LikedSongs() {
                                     className={`liked-page__row${isCurrentSong ? ' liked-page__row--active' : ''}`}
                                     role="listitem"
                                 >
-                                    {/* Index / play state */}
+                                    {}
                                     <div className="liked-page__row-index">
                                         <span className="liked-page__row-num">
                                             {isCurrentSong && isPlaying ? '▶' : index + 1}
                                         </span>
                                     </div>
 
-                                    {/* Song thumbnail + title */}
+                                    {}
                                     <div className="liked-page__row-title">
                                         <div
                                             className="liked-page__thumb"
@@ -155,7 +153,7 @@ export default function LikedSongs() {
                                                     <MusicFallback />
                                                 </div>
                                             )}
-                                            {/* Play overlay on thumb */}
+                                            {}
                                             <div className="liked-page__thumb-overlay">
                                                 <PlayIcon />
                                             </div>
@@ -177,7 +175,7 @@ export default function LikedSongs() {
                                         </div>
                                     </div>
 
-                                    {/* Album name */}
+                                    {}
                                     <div className="liked-page__row-album">
                                         <button
                                             className="liked-page__album-name"
@@ -187,7 +185,7 @@ export default function LikedSongs() {
                                         </button>
                                     </div>
 
-                                    {/* Duration + like button */}
+                                    {}
                                     <div className="liked-page__row-duration">
                                         <button
                                             className="liked-page__unlike-btn"
@@ -205,7 +203,7 @@ export default function LikedSongs() {
                     </ul>
                 </div>
             ) : (
-                /* Empty state */
+
                 <div className="empty-state">
                     <span className="empty-state__icon">💚</span>
                     <p className="empty-state__title">Songs you like will appear here</p>
