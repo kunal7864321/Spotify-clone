@@ -1,0 +1,97 @@
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 364px;
+}
+
+.search-bar__icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    pointer-events: none;
+    transition: color var(--transition-fast);
+}
+
+.search-bar__icon--search {
+    left: var(--space-4);
+}
+
+.search-bar:focus-within .search-bar__icon--search {
+    color: var(--color-text-base);
+}
+
+.search-bar__input {
+    width: 100%;
+    height: 48px;
+    padding: 0 var(--space-10) 0 48px;
+
+    border-radius: var(--radius-full);
+    background-color: var(--color-bg-elevated);
+    border: 1.5px solid transparent;
+    color: var(--color-text-base);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    font-family: inherit;
+    outline: none;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.search-bar__input::placeholder {
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-normal);
+}
+
+.search-bar__input::-webkit-search-cancel-button,
+.search-bar__input::-webkit-search-decoration {
+    -webkit-appearance: none;
+    display: none;
+}
+
+.search-bar__input:focus {
+    background-color: var(--color-bg-highlight);
+    border-color: var(--color-text-base);
+}
+
+.search-bar--has-value .search-bar__input {
+    background-color: var(--color-bg-highlight);
+}
+
+.search-bar__input:hover:not(:focus) {
+    background-color: var(--color-bg-highlight);
+}
+
+.search-bar__clear-btn {
+    position: absolute;
+    right: var(--space-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-bg-highlight);
+    color: var(--color-text-subdued);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: all var(--transition-fast);
+
+    animation: fadeIn 0.15s ease forwards;
+}
+
+.search-bar__clear-btn:hover {
+    background-color: var(--color-bg-press);
+    color: var(--color-text-base);
+    transform: scale(1.1);
+}
+
+.search-bar__clear-btn:active {
+    transform: scale(0.95);
+}
