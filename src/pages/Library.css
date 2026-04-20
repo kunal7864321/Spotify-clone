@@ -1,0 +1,161 @@
+/* ============================================================
+   Library.css — Your Library page layout
+   ============================================================ */
+
+.library-page {
+    padding: var(--space-6) var(--space-8);
+    max-width: 1400px;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* ---------- Header ---------- */
+.library-page__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.library-page__header-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.library-page__heading {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-base);
+}
+
+.library-page__sub {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-subdued);
+}
+
+.library-page__header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+/* Create playlist button */
+.library-page__create-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-full);
+    background-color: var(--color-bg-elevated);
+    color: var(--color-text-base);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    border: 1px solid var(--color-bg-press);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.library-page__create-btn:hover {
+    background-color: var(--color-bg-highlight);
+    border-color: var(--color-text-subdued);
+    transform: scale(1.02);
+}
+
+/* ---------- Liked Songs pinned shortcut ---------- */
+.library-page__liked-shortcut {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(90deg, rgba(69, 10, 245, 0.25) 0%, rgba(29, 185, 84, 0.1) 100%);
+    border: 1px solid rgba(69, 10, 245, 0.3);
+    margin-bottom: var(--space-8);
+    transition: background var(--transition-base);
+    cursor: pointer;
+}
+
+.library-page__liked-shortcut:hover {
+    background: linear-gradient(90deg, rgba(69, 10, 245, 0.35) 0%, rgba(29, 185, 84, 0.15) 100%);
+}
+
+.library-page__liked-cover {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, #450af5 0%, #c4efd9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-md);
+}
+
+.library-page__liked-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    flex: 1;
+}
+
+.library-page__liked-title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-base);
+}
+
+.library-page__liked-type {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-subdued);
+}
+
+.library-page__liked-link {
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-text-subdued);
+    color: var(--color-text-base);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    transition: all var(--transition-fast);
+}
+
+.library-page__liked-link:hover {
+    border-color: var(--color-text-base);
+    background-color: var(--color-bg-highlight);
+}
+
+/* ---------- Section ---------- */
+.library-page__section {
+    margin-bottom: var(--space-10);
+}
+
+.library-page__section-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-base);
+    margin-bottom: var(--space-4);
+}
+
+/* ---------- Grid ---------- */
+.library-page__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: var(--space-4);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .library-page {
+        padding: var(--space-4);
+    }
+
+    .library-page__grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+
+    .library-page__create-btn span {
+        display: none;
+    }
+}
