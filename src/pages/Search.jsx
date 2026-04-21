@@ -1,6 +1,5 @@
 import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { PlayerContext } from "../context/PlayerContext";
 import { AppContext } from "../context/AppContext";
 import { SONGS, ARTISTS, ALBUMS } from "../data/data";
 import SearchBar from "../Components/SearchBar";
