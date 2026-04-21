@@ -225,6 +225,124 @@ body {
 }
 
 
+/* Aesthetic Dark Theme (Midnight Obsidian) */
+.aesthetic-dark-theme {
+  --color-bg-base:      #050505;
+  --color-bg-sidebar:   #000000;
+  --color-bg-elevated:  #121212;
+  --color-bg-highlight: #1a1a1a;
+  --color-bg-press:     #222222;
+  --color-surface:      #111111;
+  --color-surface-hover:#1e1e1e;
+  --color-text-base:    #ffffff;
+  --color-text-subdued: #a7a7a7;
+  --color-text-muted:   #727272;
+  --color-green:        #1db954;
+  --color-accent:       #8b5cf6; /* Vibrant Purple for aesthetic touch */
+
+  background-color: var(--color-bg-base);
+  color: var(--color-text-base);
+}
+
+.aesthetic-dark-theme .main-content {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.aesthetic-dark-theme .main-content::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  animation: aura-pulse 15s infinite alternate;
+}
+
+@keyframes aura-pulse {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(10%, 10%) scale(1.1); }
+}
+
+.aesthetic-dark-theme .card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.aesthetic-dark-theme .card:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  transform: translateY(-8px) scale(1.02) !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  box-shadow: 0 12px 40px 0 rgba(139, 92, 246, 0.2) !important;
+}
+
+.aesthetic-dark-theme .sidebar {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.aesthetic-dark-theme .player-bar {
+  background: rgba(10, 10, 10, 0.85) !important;
+  backdrop-filter: blur(30px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.aesthetic-dark-theme .song-row {
+  transition: transform 0.2s ease, background 0.2s ease !important;
+}
+
+.aesthetic-dark-theme .song-row:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  transform: translateX(8px);
+}
+
+.aesthetic-dark-theme .btn-primary {
+  background: linear-gradient(135deg, var(--color-green) 0%, #17a34a 100%) !important;
+  box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3) !important;
+  border: none !important;
+}
+
+.aesthetic-dark-theme .btn-primary:hover {
+  transform: scale(1.05) translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(29, 185, 84, 0.5) !important;
+}
+
+.aesthetic-dark-theme .navbar {
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.aesthetic-dark-theme .player-bar__play,
+.aesthetic-dark-theme .player-bar__pause {
+  background: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.aesthetic-dark-theme .player-bar__play:hover,
+.aesthetic-dark-theme .player-bar__pause:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4) !important;
+  transform: scale(1.1) !important;
+}
+
+.aesthetic-dark-theme ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.aesthetic-dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 
 a {
   color: inherit;

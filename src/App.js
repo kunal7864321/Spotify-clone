@@ -11,7 +11,7 @@ import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
-    <div className="app doodle-theme">
+    <div className="app aesthetic-dark-theme">
       <ScrollToTop />
       <Sidebar />
       <div className="main-content">
