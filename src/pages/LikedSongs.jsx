@@ -10,9 +10,6 @@ const HeartFilledIcon = ({ size = 20 }) => (
     </svg>
 );
 
-const HeartOutlineIcon = ({ size = 20 }) => (
-    <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
     </svg>
 );
 
@@ -114,7 +111,7 @@ export default function LikedSongs() {
                     <div className="liked-page__divider" />
 
                     {}
-                    <ul className="liked-page__list" role="list">
+                    <ul className="liked-page__list">
                         {likedSongsList.map((song, index) => {
                             const isCurrentSong = currentSong?.id === song.id;
 
@@ -122,7 +119,6 @@ export default function LikedSongs() {
                                 <li
                                     key={song.id}
                                     className={`liked-page__row${isCurrentSong ? ' liked-page__row--active' : ''}`}
-                                    role="listitem"
                                 >
                                     {}
                                     <div className="liked-page__row-index">

@@ -1,7 +1,5 @@
-import { useContext, useCallback } from 'react';
+import { useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { PlayerContext } from '../context/PlayerContext';
-import { AppContext } from '../context/AppContext';
 import './Navbar.css';
 
 const BackIcon = () => (

@@ -1,14 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { PlayerContext } from "../context/PlayerContext";
-import { ARTISTS, ALBUMS, getSongsByArtist, getArtistById } from "../data/data";
+import { ALBUMS, getSongsByArtist, getArtistById } from "../data/data";
 import SongRow from "../Components/SongRow";
 import styles from "./ArtistDetail.module.css";
 
 export default function ArtistDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { playSong } = useContext(PlayerContext);
   const [following, setFollowing] = useState(false);
 
   const artist = getArtistById(id);
@@ -32,7 +30,7 @@ export default function ArtistDetail() {
   }
 
   const handlePlayTop = () => {
-    if (topTracks.length > 0) playSong(topTracks[0]);
+    // topTracks are handled by SongRow play functionality or a local context
   };
 
   return (

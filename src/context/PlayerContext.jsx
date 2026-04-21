@@ -26,6 +26,7 @@ export const PlayerContext =createContext();
             clearInterval(progressIntervalRef.current);
           }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
       useEffect(() => {
@@ -84,6 +85,7 @@ export const PlayerContext =createContext();
             audio.removeEventListener('ended', handleEnded);
           };
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [currentSong]);
 
       useEffect(() => {
@@ -91,6 +93,7 @@ export const PlayerContext =createContext();
           const audio = audioRef.current;
           audio.currentTime = (progress / 100) * duration;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [progress]);
 
       const playSong = (song) =>{

@@ -8,7 +8,7 @@ import styles from "./PlaylistDetail.module.css";
 export default function PlaylistDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { playSong, likedSongs, toggleLike } = useContext(PlayerContext);
+  const { playSong } = useContext(PlayerContext);
 
   const playlist = PLAYLISTS.find((pl) => pl.id === id);
   const songs = playlist ? playlist.songs.map(getSongById).filter(Boolean) : [];

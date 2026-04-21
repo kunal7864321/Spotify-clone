@@ -28,7 +28,6 @@ const TABS = ["Songs", "Artists", "Albums"];
 export default function Search() {
   const [activeTab, setActiveTab] = useState("Songs");
   const { searchQuery } = useContext(AppContext);
-  const { playSong } = useContext(PlayerContext);
   const navigate = useNavigate();
 
   useEffect(() => {
