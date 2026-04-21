@@ -237,43 +237,8 @@ npx netlify deploy --dir=build --prod
 
 ---
 
-## 8. Expected Questions & Answers
 
-### Q1: How does audio playback work?
-Uses HTML5 Audio API with React refs. The Audio object loads the song URL from `audioUrl` field and `.play()` method starts playback. Progress is tracked using `setInterval`.
-
-### Q2: Why use Context API instead of Redux?
-Context API is React's built-in solution. It's simpler for this project size and sufficient for global state needs without additional dependencies or boilerplate code.
-
-### Q3: How is the progress bar implemented?
-A `setInterval` runs every second while music plays. Progress is calculated as: `(currentTime / duration) * 100`. Dragging the slider adjusts `audio.currentTime`.
-
-### Q4: What is the doodly theme?
-An animated green waveform bar at the player bottom created using CSS keyframe animations. It appears when music is playing with gradient colors and pulsing glow effects.
-
-### Q5: How do you handle navigation between pages?
-React Router's `<Routes>` component in App.js maps URL paths to corresponding page components. The `<Link>` component is used for navigation.
-
-### Q6: How are liked songs stored and persisted?
-JavaScript Set stores liked song IDs. The `toggleLike()` function adds or removes IDs from the set. The UI updates based on whether the ID exists in the set.
-
-### Q7: What challenges were faced during development?
-- Finding working audio sample URLs (used SoundHelix test MP3s)
-- Netlify CLI authentication issues
-- Image URL reliability (solved using Picsum placeholder service)
-
-### Q8: How does the player bar handle different screen sizes?
-CSS media queries hide the center controls and volume slider on mobile devices (max-width: 768px), showing only essential info.
-
-### Q9: What is the purpose of useEffect hook?
-`useEffect` handles side effects in React - in this project: setting up the Audio object, responding to play/pause state changes, managing the progress interval, and cleanup on unmount.
-
-### Q10: How is the theme/colors managed?
-CSS custom properties (variables) in `index.css` define the color palette. The `--color-green` variable (#1db954) is used for Spotify-like branding.
-
----
-
-## 9. Future Enhancements
+## 8. Future Enhancements
 
 1. Integrate with Spotify API for real music data
 2. User authentication system
@@ -285,7 +250,7 @@ CSS custom properties (variables) in `index.css` define the color palette. The `
 
 ---
 
-## 10. Conclusion
+## 9. Conclusion
 
 This Spotify Clone project demonstrates:
 - Proficiency in React.js fundamentals
@@ -299,7 +264,3 @@ The application is fully functional and deployed at:
 **https://stately-frangollo-a323ac.netlify.app**
 
 ---
-
-*Project submitted for examination*
-*Developer: Kunal Kumar Jha*
-*Date: April 2026*
