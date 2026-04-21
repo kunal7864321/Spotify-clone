@@ -7,16 +7,16 @@ export const AppProvider =({children}) => {
     const [userPlaylists, setUserPlaylists] = useState([]);
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
-     const createPlaylist = (name) => {
-        const newPlaylist = {
-            id:`p${userPlaylists.length + 9}`,
-            name: name,
-            description: "",
-            image:"",
-            songs:[],
-        };
-        setUserPlaylists(prev => [...prev, newPlaylist]);
-     };
+const createPlaylist = (name) => {
+         const newPlaylist = {
+             id:`p${userPlaylists.length + 9}`,
+             name: name,
+             description: "",
+             image:"https://picsum.photos/seed/newplaylist/300/300",
+             songs:[],
+         };
+         setUserPlaylists(prev => [...prev, newPlaylist]);
+      };
 
      const getSearchResults = (query) => {
         return SONGS.filter(song =>

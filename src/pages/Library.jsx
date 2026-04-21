@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import { PlayerContext } from '../context/PlayerContext';
 import { PLAYLISTS, SONGS } from '../data/data';
-import PlaylistCard from '../components/PlaylistCard';
+import PlaylistCard from '../Components/PlaylistCard';
 import './Library.css';
 
 const PlusIcon = () => (
